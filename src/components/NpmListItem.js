@@ -1,3 +1,3 @@
 export default function NpmListItem() {
-  return <p>NpmListItem</p>;
+  return <li>NpmListItem</li>;
 }

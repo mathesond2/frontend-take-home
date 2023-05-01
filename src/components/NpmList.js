@@ -1,3 +1,9 @@
+import NpmListItem from './NpmListItem';
+
 export default function NpmList() {
-  return <p>NpmList</p>;
+  return (
+    <ul>
+      <NpmListItem />
+    </ul>
+  );
 }
