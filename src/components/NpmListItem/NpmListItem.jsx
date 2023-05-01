@@ -1,4 +1,5 @@
 import { Heading, Link, List, ListItem, Tag, Text } from '@chakra-ui/react';
+import './NpmListItem.css';
 
 export default function NpmListItem({ name, description, npmLink, keywords }) {
   return (

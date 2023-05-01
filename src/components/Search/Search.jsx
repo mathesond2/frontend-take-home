@@ -1,5 +1,6 @@
 import { Button, Input } from '@chakra-ui/react';
 import { useState } from 'react';
+import './Search.css';
 
 export default function Search({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
