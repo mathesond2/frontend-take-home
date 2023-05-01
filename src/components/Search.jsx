@@ -1,3 +1,4 @@
+import { Button, Input } from '@chakra-ui/react';
 import { useState } from 'react';
 
 export default function Search({ onSearch }) {
@@ -15,8 +16,8 @@ export default function Search({ onSearch }) {
 
   return (
     <form onSubmit={handleSubmit} className="search">
-      <input type="text" value={searchTerm} onChange={handleChange} placeholder="Search NPM packages" />
-      <button type="submit">Search</button>
+      <Input size="lg" type="text" value={searchTerm} onChange={handleChange} placeholder="Search NPM packages" />
+      <Button size="lg" type="submit">Search</Button>
     </form>
   );
 }
