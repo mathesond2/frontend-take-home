@@ -1,4 +1,4 @@
-import './App.css';
+import Layout from './components/Layout';
 import NpmList from './components/NpmList/NpmList';
 import Search from './components/Search/Search';
 import { useNpmData } from './hooks/useNpmData';
@@ -8,8 +8,10 @@ function App() {
   const { npmData, fetchNpmData } = useNpmData();
   return (
     <ChakraProvider>
-      <Search onSearch={fetchNpmData} />
-      <NpmList npmData={npmData} />
+      <Layout>
+        <Search onSearch={fetchNpmData} />
+        <NpmList npmData={npmData} />
+      </Layout>
     </ChakraProvider>
   );
 }
