@@ -3,8 +3,9 @@ import Error from './Error';
 
 describe('Error', () => {
   it('renders with associated elements', () => {
-    render(<Error text={'slight issue'} />);
-    const linkElement = screen.getByText(/slight issue/i);
+    const errorText = 'slight issue';
+    render(<Error text={errorText} />);
+    const linkElement = screen.getByText(errorText);
     expect(linkElement).toBeInTheDocument();
   });
 });

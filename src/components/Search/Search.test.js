@@ -7,15 +7,12 @@ describe('Search', () => {
 
   it('renders with associated elements', () => {
     render(<Search onSearch={mockedHandleSearch} />);
-    const button = screen.getByRole('button');
-    expect(button).toBeInTheDocument();
-    const textBox = screen.getByRole('textbox');
-    expect(textBox).toBeInTheDocument();
+    expect(screen.getByRole('button')).toBeInTheDocument();
+    expect(screen.getByRole('textbox')).toBeInTheDocument();
   });
 
   it('renders typed query and fires function upon submit', () => {
     render(<Search onSearch={mockedHandleSearch} />);
-    const button = screen.getByRole('button');
     const textBox = screen.getByRole('textbox');
     const query = 'new test';
 
@@ -24,7 +21,7 @@ describe('Search', () => {
     });
 
     expect(textBox).toHaveValue(query);
-    fireEvent.click(button);
+    fireEvent.click(screen.getByRole('button'));
     expect(mockedHandleSearch).toHaveBeenCalled();
   });
 });

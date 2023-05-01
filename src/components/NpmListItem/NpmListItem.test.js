@@ -18,10 +18,8 @@ describe('NpmListItem', () => {
         <NpmListItem name={name} description={description} keywords={keywords} npmLink={links.npm} />
       </List>,
     );
-    const nameContent = screen.getByText(name);
-    expect(nameContent).toBeInTheDocument();
-    const descriptionContent = screen.getByText(description);
-    expect(descriptionContent).toBeInTheDocument();
+    expect(screen.getByText(name)).toBeInTheDocument();
+    expect(screen.getByText(description)).toBeInTheDocument();
     expect(screen.getByRole('link')).toHaveAttribute('href', links.npm);
     expect(screen.getAllByText(keywords[0])).toHaveLength(1);
     expect(screen.getAllByText(keywords[1])).toHaveLength(1);

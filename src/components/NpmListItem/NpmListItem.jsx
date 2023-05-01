@@ -12,13 +12,15 @@ export default function NpmListItem({ name, description, npmLink, keywords }) {
         </Link>
       </Heading>
       <Text fontSize='md'>{description}</Text>
-      <List spacing={3} className='keyword-list'>
-        {keywords?.map((keyword, i) => (
-          <ListItem key={`${keyword}-${i}`} className='keyword-list-item'>
-            <Tag>{keyword}</Tag>
-          </ListItem>
-        ))}
-      </List>
+      {keywords && (
+        <List spacing={3} className='keyword-list'>
+          {keywords.map((keyword, i) => (
+            <ListItem key={`${keyword}-${i}`} className='keyword-list-item'>
+              <Tag>{keyword}</Tag>
+            </ListItem>
+          ))}
+        </List>
+      )}
     </ListItem>
   );
 }
