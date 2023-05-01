@@ -1,6 +1,7 @@
 import { List } from '@chakra-ui/react';
-import NpmListItem from '../NpmListItem/NpmListItem';
+import Error from '../Error';
 import Loader from '../Loader';
+import NpmListItem from '../NpmListItem/NpmListItem';
 
 export default function NpmList({ npmData }) {
   const { data, loading, error } = npmData;
@@ -10,7 +11,7 @@ export default function NpmList({ npmData }) {
   }
 
   if (error) {
-    return <p>Error: {error.message}</p>;
+    return <Error text={'An error occurred getting package data. Please try again.'}/>;
   }
 
   return (
