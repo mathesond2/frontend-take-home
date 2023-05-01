@@ -27,10 +27,9 @@ You may use any pattern or library that you find suitable to accomplish this tas
 - Proper use of React APIs.
 - Clean, well-commented code. We prefer clarity over cleverness.
 
-
 ## React
 
-You may use whatever patterns and state management you prefer while working on this. The choice of libraries and state management patterns is not as important as a functioning project. 
+You may use whatever patterns and state management you prefer while working on this. The choice of libraries and state management patterns is not as important as a functioning project.
 
 ## Extra Credit
 
@@ -176,3 +175,31 @@ Returns
   }
 ]
 ```
+
+### Candidate Submission Details (David Matheson)
+
+#### Installation
+
+1. run `npm i`
+1. run `npm start`
+1. run `npm run tests` to run unit tests
+
+#### Architecture
+
+This application consists of 3 main components:
+
+- `Search`
+- `NpmList`
+- `NpmListItem`
+
+Both `Search` and `NpmList` consume data/behavior given via props passed from a custom hook, `useNpmData`, which encapsulates the data fetching and associated UI states (error/loading/data). While fetch error handling is done within `NpmList`, both components are wrapped in an ErrorBoundary (with an associated fallback component) if non async fn/event handler errors arise.
+
+A `Layout` component is responsible for layout, along with providing a top-level navigation section which includes a title and `ThemeToggle` component to toggle between light/dark modes. Finally, the app is wrapped in a provider for the installed UI library, [Chakra-UI](https://chakra-ui.com/), allowing usage of the library's associated components and hooks.
+
+#### Additional Notes
+
+- This app was bootstrapped with [create-react-app](https://create-react-app.dev/). While the [new react docs](https://react.dev/learn/start-a-new-react-project) appear to prefer newer solutions (ex: Vite, NextJS, etc), I figured that this use case would suffice for CRA.
+- Further opportunities for improvement:
+  1. Utilizing Typescript for type safety
+  1. Considering loading states via React's [Suspense](https://react.dev/reference/react/Suspense) API
+  1. Handling fetch errors within the error boundary via the `useErrorBoundary` hook provided by the [react-error-boundary](https://github.com/bvaughn/react-error-boundary) library
