@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
 import npmDataReducer from '../reducers/npmDataReducer';
 
-function buildUrl(query) {
+function buildNpmUrl(query) {
   return `https://api.npms.io/v2/search/suggestions?q=${query}`;
 }
 
@@ -22,7 +22,7 @@ export function useNpmData() {
         return;
       }
 
-      const data = await fetch(buildUrl(val));
+      const data = await fetch(buildNpmUrl(val));
       const parsedData = await data.json();
       dispatchNpmData({ type: 'success', data: parsedData });
     } catch (error) {

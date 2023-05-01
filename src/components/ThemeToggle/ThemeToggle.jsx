@@ -3,7 +3,6 @@ import { IconButton, useColorMode } from '@chakra-ui/react';
 
 export default function ThemeToggle() {
   const { colorMode, toggleColorMode } = useColorMode();
-
   return (
     <IconButton
       aria-label="switch to dark or light mode"

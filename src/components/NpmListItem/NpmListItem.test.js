@@ -2,16 +2,15 @@ import { List } from '@chakra-ui/react';
 import { render, screen } from '@testing-library/react';
 import NpmListItem from './NpmListItem';
 
-const mockData = {
-  name: 'test',
-  description: 'my test description',
-  links: {
-    npm: 'https://www.npmjs.com/package/test',
-  },
-  keywords: ['testing-keyword-1', 'testing-keyword-2'],
-};
-
 describe('NpmListItem', () => {
+  const mockData = {
+    name: 'test',
+    description: 'my test description',
+    links: {
+      npm: 'https://www.npmjs.com/package/test',
+    },
+    keywords: ['testing-keyword-1', 'testing-keyword-2'],
+  };
   const { name, description, links, keywords } = mockData;
   it('renders NpmListItem', () => {
     render(

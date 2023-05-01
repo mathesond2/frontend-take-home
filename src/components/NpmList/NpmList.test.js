@@ -9,12 +9,12 @@ jest.mock('../Error/Error', () => jest.fn(() => null));
 jest.mock('../Loader/Loader', () => jest.fn(() => null));
 
 describe('NpmList', () => {
-  const initialData = {
-    data: [],
-    loading: false,
-    error: null,
-  };
   it('renders an empty list if no data', () => {
+    const initialData = {
+      data: [],
+      loading: false,
+      error: null,
+    };
     render(<NpmList npmData={initialData} />);
     expect(screen.getByRole('list')).toBeInTheDocument();
     expect(screen.queryByRole('listitem')).not.toBeInTheDocument();

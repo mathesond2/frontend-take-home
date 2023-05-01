@@ -20,15 +20,13 @@ export default function Search({ onSearch }) {
     setSearchTerm('');
   }
 
-
   return (
     <form onSubmit={handleSubmit} className="search">
       <InputGroup>
         <Input size="lg" type="text" value={searchTerm} onChange={handleChange} placeholder="Search NPM packages" />
-        <InputRightElement top={1} children={<CloseIcon className='close-icon' onClick={handleCloseIconClick} />} />
+        {searchTerm.length > 0 && <InputRightElement top={1} children={<CloseIcon className='close-icon' onClick={handleCloseIconClick} />} />}
       </InputGroup>
       <Button size="lg" type="submit">Search</Button>
-
     </form>
   );
 }

@@ -13,7 +13,7 @@ describe('Search', () => {
     expect(textBox).toBeInTheDocument();
   });
 
-  it('renders with type query and fires function upon submit', () => {
+  it('renders typed query and fires function upon submit', () => {
     render(<Search onSearch={mockedHandleSearch} />);
     const button = screen.getByRole('button');
     const textBox = screen.getByRole('textbox');
