@@ -1,6 +1,6 @@
 import './App.css';
-import NpmList from './components/NpmList';
-import Search from './components/Search';
+import NpmList from './components/NpmList/NpmList';
+import Search from './components/Search/Search';
 import { useNpmData } from './hooks/useNpmData';
 import { ChakraProvider } from '@chakra-ui/react'
 

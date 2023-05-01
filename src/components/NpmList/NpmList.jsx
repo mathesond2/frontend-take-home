@@ -1,5 +1,5 @@
 import { List } from '@chakra-ui/react';
-import NpmListItem from './NpmListItem';
+import NpmListItem from '../NpmListItem/NpmListItem';
 
 export default function NpmList({ npmData }) {
   const { data, loading, error } = npmData;
