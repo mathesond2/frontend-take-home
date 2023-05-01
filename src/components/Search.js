@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-export default function Search() {
+export default function Search({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('searchTerm: ', searchTerm);
+    onSearch(searchTerm);
   }
 
   function handleChange(e) {
