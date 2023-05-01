@@ -1,9 +1,12 @@
 import { Heading } from "@chakra-ui/layout";
+import ThemeToggle from "../../hooks/ThemeToggle";
+import './Navbar.css';
 
 export default function Navbar() {
   return (
-      <header>
-        <Heading as="h1" size="lg">NPM Package Search</Heading>
+      <header className="navbar">
+        <Heading as="h1" size="lg" marginY={4}>NPM Package Search</Heading>
+        <ThemeToggle />
       </header>
   )
 }
