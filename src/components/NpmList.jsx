@@ -1,3 +1,4 @@
+import { List } from '@chakra-ui/react';
 import NpmListItem from './NpmListItem';
 
 export default function NpmList({ npmData }) {
@@ -12,10 +13,10 @@ export default function NpmList({ npmData }) {
   }
 
   return (
-    <ul>
+    <List>
       {data.map(({ package: { name, description, links, keywords } }) => (
         <NpmListItem key={name} name={name} description={description} npmLink={links.npm} keywords={keywords} />
       ))}
-    </ul>
+    </List>
   );
 }
