@@ -1,4 +1,5 @@
-import { Button, Input } from '@chakra-ui/react';
+import { CloseIcon } from '@chakra-ui/icons';
+import { Button, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
 import { useState } from 'react';
 import './Search.css';
 
@@ -15,10 +16,19 @@ export default function Search({ onSearch }) {
     setSearchTerm(val);
   }
 
+  function handleCloseIconClick() {
+    setSearchTerm('');
+  }
+
+
   return (
     <form onSubmit={handleSubmit} className="search">
-      <Input size="lg" type="text" value={searchTerm} onChange={handleChange} placeholder="Search NPM packages" />
+      <InputGroup>
+        <Input size="lg" type="text" value={searchTerm} onChange={handleChange} placeholder="Search NPM packages" />
+        <InputRightElement top={1} children={<CloseIcon className='close-icon' onClick={handleCloseIconClick} />} />
+      </InputGroup>
       <Button size="lg" type="submit">Search</Button>
+
     </form>
   );
 }

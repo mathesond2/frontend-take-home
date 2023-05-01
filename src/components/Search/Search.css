@@ -3,3 +3,8 @@
   width: 100%;
   margin-bottom: 2rem;
 }
+
+.close-icon {
+  cursor: pointer;
+  font-size: .5rem;
+}

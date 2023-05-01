@@ -1,9 +1,11 @@
-import { Heading, Link, List, ListItem, Tag, Text } from '@chakra-ui/react';
+import { Heading, Link, List, ListItem, Tag, Text, useColorMode } from '@chakra-ui/react';
 import './NpmListItem.css';
 
 export default function NpmListItem({ name, description, npmLink, keywords }) {
+  const { colorMode } = useColorMode();
+  const bgColor = colorMode === 'light' ? 'gray.100' : 'gray.700';
   return (
-    <ListItem className='npm-list-item'>
+    <ListItem className='npm-list-item' _hover={{backgroundColor: bgColor}}>
       <Heading as="p" size='md'>
         <Link href={npmLink} rel="noreferrer" isExternal>
           {name}
