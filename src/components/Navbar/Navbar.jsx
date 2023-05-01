@@ -1,5 +1,5 @@
 import { Heading } from "@chakra-ui/layout";
-import ThemeToggle from "../../hooks/ThemeToggle";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import './Navbar.css';
 
 export default function Navbar() {
