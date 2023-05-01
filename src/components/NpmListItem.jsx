@@ -1,15 +1,21 @@
+import { Heading, Link, List, ListItem, Tag, Text } from '@chakra-ui/react';
+
 export default function NpmListItem({ name, description, npmLink, keywords }) {
   return (
-    <li>
-      <a href={npmLink} target="_blank" rel="noreferrer">
-        {name}
-      </a>{' '}
-      {description}
-      <ul>
-        {keywords?.map((keyword) => (
-          <li key={keyword}>{keyword}</li>
+    <ListItem className='npm-list-item'>
+      <Heading as="p" size='md'>
+        <Link href={npmLink} rel="noreferrer" isExternal>
+          {name}
+        </Link>
+      </Heading>
+      <Text fontSize='md'>{description}</Text>
+      <List spacing={3} className='keyword-list'>
+        {keywords?.map((keyword, i) => (
+          <ListItem key={`${keyword}-${i}`} className='keyword-list-item'>
+            <Tag>{keyword}</Tag>
+          </ListItem>
         ))}
-      </ul>
-    </li>
+      </List>
+    </ListItem>
   );
 }
